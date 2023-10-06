@@ -96,7 +96,7 @@ echo "一共執行了" . $count . "次的程式內容";
 <h3>陣列</h3>
 
 <?php
-$a=['甲','乙','丙','丁'];
+$a=['甲','乙','丙','丁','戊'];
 
 for($i=0;$i<count($a);$i++){
 	echo $a[$i];
@@ -104,11 +104,13 @@ for($i=0;$i<count($a);$i++){
 
 echo "<br>";
 
+// 使用$b代表裡面值
 foreach($a as $b){
 	echo $b;
 	echo "<br>";
 }
 
+// 使用foreach設定將索引及值一起顯示 並$idx => $b 通常會默認前面是索引 後面是值
 foreach($a as $idx => $b){
 	echo $idx ."=>" .$b;
 	echo "<br>";
