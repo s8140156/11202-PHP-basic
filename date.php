@@ -239,8 +239,9 @@ $thisMonth = date("Y");
 $thisFirstday = date("Y-m-1");
 // echo $thisFirstday;
 $thisFirstDate = date('w', strtotime($thisFirstday));
+echo $thisFirstDate;
 $thisMonthDays = date("t");
-// echo $thisMonthDays;
+// echo $thisMonthDays; 
 $thisLastDay = date("Y-m-$thisMonthDays");
 // echo $thisLastDay;
 $weeks=ceil(($thisMonthDays+$thisFirstDate)/7);
@@ -256,7 +257,7 @@ echo "<th>thu</th>";
 echo "<th>fri</th>";
 echo "<th>sat</th>";
 echo "	</tr>";
-for ($i = 0; $i < 6; $i++) {
+for ($i = 0; $i < $weeks; $i++) {
 	echo "<tr>";
 	for ($j = 0; $j < 7; $j++) {
 		echo "<td>";
@@ -271,7 +272,30 @@ for ($i = 0; $i < 6; $i++) {
 }
 echo "</table>";
 
+?>
+
+<h3>程式寫法</h3>
+
+ <?php
+
+echo "<h3>";
+echo date("西元Y年m月");
+echo "</h3>";
+$thisMonth = date("Y");
+// echo $thisMonth;
+$thisFirstday = date("Y-m-1");
+// echo $thisFirstday;
+$thisFirstDate = date('w', strtotime($thisFirstday));
+echo $thisFirstDate;
+$thisMonthDays = date("t");
+// echo $thisMonthDays; 
+$thisLastDay = date("Y-m-$thisMonthDays");
+// echo $thisLastDay;
+$weeks=ceil(($thisMonthDays+$thisFirstDate)/7);
+// echo $weeks;
+// $firstCell=date()還沒寫完
 
 
 
-echo "</table>";
+
+ ?>
