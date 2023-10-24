@@ -25,6 +25,11 @@
 	}
 </style>
 
+<h3>使用html製作表格</h3>
+<ul>
+	<li>所有程序手動輸入 花時間</li>
+	<li>無法機動調整 如時間無法自動更新</li>
+</ul>
 
 <table>
 	<tr>
@@ -108,7 +113,8 @@ $thisMonth = date("Y");
 $thisFirstday = date("Y-m-1");
 // echo $thisFirstday;
 $thisFirstDate = date('w', strtotime($thisFirstday));
-echo $thisFirstDate;
+// date(w以數字表示星期幾0是日6是六,帶入)
+// echo $thisFirstDate;
 $thisMonthDays = date("t");
 // echo $thisMonthDays; 
 $thisLastDay = date("Y-m-$thisMonthDays");
@@ -155,15 +161,48 @@ $thisMonth = date("Y");
 $thisFirstday = date("Y-m-1");
 // echo $thisFirstday;
 $thisFirstDate = date('w', strtotime($thisFirstday));
-echo $thisFirstDate;
+// echo $thisFirstDate;
 $thisMonthDays = date("t");
 // echo $thisMonthDays; 
 $thisLastDay = date("Y-m-$thisMonthDays");
 // echo $thisLastDay;
 $weeks=ceil(($thisMonthDays+$thisFirstDate)/7);
 // echo $weeks;
-// $firstCell=date()還沒寫完
+$firstCell=date("Y-m-d",strtotime("-$thisFirstDate days",strtotime($thisFirstday)));
 
+echo "<table>";
+echo "<tr>";
+echo "<th>sun</th>";
+echo "<th>mon</th>";
+echo "<th>tue</th>";
+echo "<th>wed</th>";
+echo "<th>thu</th>";
+echo "<th>fri</th>";
+echo "<th>sat</th>";
+echo "</tr>";
+
+for($i=0;$i<$weeks;$i++){
+	echo "<tr>";
+	for($j=0;$j<7;$j++){
+		$addDays=7*$i+$j;
+		// 計算日期格是第一週開始後的哪一天
+		$thisCellDate=strtotime("+$addDays days",strtotime($firstCell));
+		// 計算每個日期格的實際日期，基於第一週的第一格的時間
+		if(date('w',$thisCellDate)==0 || date('w',$thisCellDate)==6){
+			echo "<td style='background: lightcoral'>";
+		}else{
+			echo "<td>";
+		}
+		if(date("m",$thisCellDate)==date("m",strtotime($thisFirstday))){
+			// 檢查日期格是否在本月範圍內 月份有符合本月則可以顯示
+			echo date("j", $thisCellDate);
+		}
+		echo "</td>";
+	}
+	echo "</tr>";
+
+}
+echo "</table>";
 
 
 
