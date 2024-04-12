@@ -24,6 +24,7 @@ if($year%4==0){
 }else{
 	echo $year."是平年";
 }
+}
 
 
 ?>

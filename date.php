@@ -146,7 +146,7 @@ $nextMonday = date("Y-m-d", strtotime("+1 week", $nextMonday));
 
 	table {
 		width: 50%;
-		hight: 50vh;
+		height: 50vh;
 	}
 
 	td {

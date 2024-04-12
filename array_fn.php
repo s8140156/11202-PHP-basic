@@ -33,12 +33,13 @@ $cc=implode("--",$tt);
 
  echo "<hr>";
 
-sort($array);
-
-// 排序前的print
+ // 排序前的print
 echo "<pre>";
 print_r($array);
 echo "</pre>";
+
+sort($array); //排序函式 sort()
+
 
 // 排序後的print
 echo "<pre>";

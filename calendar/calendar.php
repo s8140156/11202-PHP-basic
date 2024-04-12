@@ -15,7 +15,7 @@
 
 	table {
 		width: 50%;
-		hight: 50vh;
+		height: 50vh;
 	}
 
 	td {
