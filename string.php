@@ -87,8 +87,8 @@ echo str_replace($key, "<span>$key</span>", $str);
 <?php
 
 $str = "學會PHP網頁程式設計，薪水會加倍，工作會好找";
-for($i=0;$i<mb_strlen($str);$i=$i=3){
-	echo $str[$i];
-	echo $str[$i+1];
-	echo $str[$i+2];
-}
+// for($i=0;$i<mb_strlen($str);$i=$i=3){
+	// echo $str[$i];
+	// echo $str[$i+1];
+	// echo $str[$i+2];
+// }
